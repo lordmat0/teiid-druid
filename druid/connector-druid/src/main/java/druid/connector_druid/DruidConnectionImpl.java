@@ -27,8 +27,4 @@ public class DruidConnectionImpl extends BasicConnection implements DruidConnect
     	
     }
 
-	public void someMethod() throws ResourceException {
-		// TODO Auto-generated method stub
-		
-	}
 }
