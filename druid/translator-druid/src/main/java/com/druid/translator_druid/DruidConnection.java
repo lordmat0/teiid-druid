@@ -27,7 +27,5 @@ import javax.resource.cci.Connection;
 
 
 public interface DruidConnection extends Connection {
-    void someMethod() throws ResourceException;
-
 	void close();
 }

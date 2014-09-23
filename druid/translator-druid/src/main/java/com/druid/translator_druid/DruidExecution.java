@@ -58,6 +58,9 @@ public class DruidExecution implements ResultSetExecution {
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
 	}
 
+	// "While the command is being executed, the translator provides results via the
+	// ResultSetExecution's `next` method. The `next` method should return null to
+	// indicate the end of results."
 	public List<?> next() throws TranslatorException, DataNotAvailableException {
 		if (results.hasNext()) {
 			return projectRow(results.next(), neededColumns);
