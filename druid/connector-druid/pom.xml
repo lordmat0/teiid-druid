@@ -11,7 +11,7 @@
       <url>http://www.jboss.org/teiid</url>
 
     <properties>
-        <version.org.jboss.teiid>8.4.1</version.org.jboss.teiid>
+        <version.org.jboss.teiid>8.8.1</version.org.jboss.teiid>
         <version.javax.resource.connector.api>1.5</version.javax.resource.connector.api>
         <version.junit.junit>3.8.1</version.junit.junit>
     </properties> 
@@ -40,7 +40,22 @@
               <version>${version.junit.junit}</version>
               <scope>test</scope>
             </dependency>
-      </dependencies>  
+      </dependencies>
+      
+      	<repositories>
+
+		<repository>
+			<id>jboss-releases</id>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<repository>
+			<id>redhat-releases</id>
+			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+		</repository>
+
+	</repositories>
+      
     <build>
         <plugins>
             <plugin>
