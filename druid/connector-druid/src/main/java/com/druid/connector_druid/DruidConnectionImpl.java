@@ -1,14 +1,14 @@
 /*
  * ${license}
  */
-package druid.connector_druid;
+package com.druid.connector_druid;
 
 
 import javax.resource.ResourceException;
 
 import org.teiid.resource.spi.BasicConnection;
 
-import translator_druid.translator_druid.DruidConnection;
+import com.druid.translator_druid.DruidConnection;
 
 /**
  * Connection to the resource. You must define druidConnection interface, that 

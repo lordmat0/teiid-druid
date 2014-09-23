@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  */
 
-package druid.connector_druid;
+package com.druid.connector_druid;
 
 import java.util.ResourceBundle;
 

@@ -13,7 +13,7 @@
     <properties>
         <version.org.jboss.teiid>8.8.1</version.org.jboss.teiid>
         <version.javax.resource.connector.api>1.5</version.javax.resource.connector.api>
-        <version.junit.junit>3.8.1</version.junit.junit>
+        <version.junit.junit>4.11</version.junit.junit>
     </properties> 
       <dependencies>
             <dependency>

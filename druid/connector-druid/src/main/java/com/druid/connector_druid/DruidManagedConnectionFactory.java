@@ -1,7 +1,7 @@
 /*
  * ${license}
  */
-package druid.connector_druid;
+package com.druid.connector_druid;
 
 import javax.resource.ResourceException;
 import javax.resource.spi.InvalidPropertyException;

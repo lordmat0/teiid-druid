@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  */
 
-package translator_druid.translator_druid;
+package com.druid.translator_druid;
 
 import java.util.ArrayList;
 import java.util.Iterator;

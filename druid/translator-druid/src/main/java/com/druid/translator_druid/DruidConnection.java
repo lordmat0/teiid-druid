@@ -19,7 +19,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301 USA.
  */
-package translator_druid.translator_druid;
+package com.druid.translator_druid;
 
 
 import javax.resource.ResourceException;

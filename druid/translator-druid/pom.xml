@@ -11,6 +11,7 @@
 	<properties>
 		<version.org.jboss.teiid>8.8.1</version.org.jboss.teiid>
 		<version.javax.resource.connector.api>1.5</version.javax.resource.connector.api>
+		<version.junit.junit>4.11</version.junit.junit>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -30,6 +31,13 @@
 			<artifactId>connector-api</artifactId>
 			<version>${version.javax.resource.connector.api}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${version.junit.junit}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
