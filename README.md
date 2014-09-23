@@ -12,4 +12,4 @@ https://raw.githubusercontent.com/teiid/teiid/master/settings.xml
 
 to
 
-users\<username>\.m2\
+users\username\.m2\
