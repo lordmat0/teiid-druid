@@ -7,7 +7,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>Sql4DCompiler</module>
-        <module>Sql4DClient</module>
         <module>Sql4Ddriver</module>
     </modules>
     <properties>
