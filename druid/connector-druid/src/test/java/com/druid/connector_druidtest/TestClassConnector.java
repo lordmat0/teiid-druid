@@ -61,7 +61,7 @@ public class TestClassConnector {
 		params.add("endT", new DateTime());
 		DDataSource source = druidConnection.getConnection();
 		source.setNamedParams(params);
-		String queryResult = source.query(sql, true, "sql").left().get();
+		String queryResult = source.query(sql, true, "sql").right().get().right().get().toString();
 		assertEquals(queryResult, "test");
 	}
 
