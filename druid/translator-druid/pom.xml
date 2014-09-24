@@ -39,6 +39,13 @@
 			<version>${version.junit.junit}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		
 	</dependencies>
 
 	<repositories>
@@ -52,6 +59,7 @@
 			<id>redhat-releases</id>
 			<url>http://maven.repository.redhat.com/techpreview/all/</url>
 		</repository>
+
 
 	</repositories>
 
