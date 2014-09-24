@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,8 +36,8 @@ public class TestClassConnector {
 	public void testQuery() {
 		String sql = "SELECT * FROM wikipedia WHERE interval BETWEEN :startT AND :endT";
 		NamedParameters params = new NamedParameters();
-		params.add("startT", new Date(System.currentTimeMillis() - 7*24*60*60*1000));
-		params.add("endT", new Date());
+		params.add("startT", new DateTime(2014, 9, 1, 0, 0));
+		params.add("endT", new DateTime());
 		DDataSource source = druidConnection.getConnection();
 		source.setNamedParams(params);
 		String queryResult = source.query(sql).left().get();
