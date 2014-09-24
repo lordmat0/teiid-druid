@@ -33,6 +33,8 @@ import org.teiid.translator.DataNotAvailableException;
 import org.teiid.translator.ResultSetExecution;
 import org.teiid.translator.TranslatorException;
 
+import com.yahoo.sql4d.sql4ddriver.DDataSource;
+
 /**
  * Represents the execution of a command.
  */
@@ -46,29 +48,43 @@ public class DruidExecution implements ResultSetExecution {
 	private Select query;
 	
 	private DruidConnection connection;
-
+	private DDataSource dDataSource;
 	/**
      * 
      */
 	public DruidExecution(Select query, DruidConnection connection) {
 		this.query = query;
 		this.connection = connection;
+		this.dDataSource = connection.getConnection();
 	}
 
 	public void execute() throws TranslatorException {
 		// Log our command
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR, DruidPlugin.UTIL
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
+		
+		try{
+		// TODO find a way to get a string version of Select
+		dDataSource.query(query.toString());
+		}catch(Exception ex){
+			throw new TranslatorException(ex);
+		}
+		
 	}
 
 	// "While the command is being executed, the translator provides results via the
 	// ResultSetExecution's `next` method. The `next` method should return null to
 	// indicate the end of results."
 	public List<?> next() throws TranslatorException, DataNotAvailableException {
+		throw new DataNotAvailableException(); // Assuming there is no pager in druid
+		
+		
+		/*
 		if (results.hasNext()) {
 			return projectRow(results.next(), neededColumns);
 		}
 		return null;
+		*/
 	}
 
 	/**
@@ -88,12 +104,15 @@ public class DruidExecution implements ResultSetExecution {
 	public void close() {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR,
 				DruidPlugin.UTIL.getString("close_query")); //$NON-NLS-1$
+		
+		
 
 	}
 
 	public void cancel() throws TranslatorException {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR,
 				DruidPlugin.UTIL.getString("cancel_query")); //$NON-NLS-1$
+		
 	}
 
 }
