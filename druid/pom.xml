@@ -8,8 +8,6 @@
     <modules>
         <module>Sql4DCompiler</module>
         <module>Sql4Ddriver</module>
-        <module>connector-druid</module>
-        <module>translator-druid</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
