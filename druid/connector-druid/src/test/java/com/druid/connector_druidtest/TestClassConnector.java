@@ -18,6 +18,8 @@ import com.druid.connector_druid.DruidConnectionImpl;
 import com.druid.connector_druid.DruidManagedConnectionFactory;
 import com.druid.translator_druid.DruidConnection;
 import com.yahoo.sql4d.sql4ddriver.DDataSource;
+import com.yahoo.sql4d.sql4ddriver.Joiner4All;
+import com.yahoo.sql4d.sql4ddriver.Mapper4All;
 import com.yahoo.sql4d.sql4ddriver.NamedParameters;
 import com.yahoo.sql4d.sql4ddriver.PrettyPrint;
 import com.yahoo.sql4d.sql4ddriver.rowmapper.TimeSeriesBean;
@@ -54,14 +56,29 @@ public class TestClassConnector {
 	}
 
 	@Test
-	public void testQuery() {
+	public void testQuery() throws Exception {
 		String sql = "SELECT page FROM wikipedia WHERE interval BETWEEN :startT AND :endT limit 5 ";
 		NamedParameters params = new NamedParameters();
 		params.add("startT", new DateTime(2014, 9, 1, 0, 0));
 		params.add("endT", new DateTime());
 		DDataSource source = druidConnection.getConnection();
 		source.setNamedParams(params);
-		String queryResult = source.query(sql, true, "sql").right().get().right().get().toString();
+		Either<String,Either<Joiner4All,Mapper4All>> mapperRes = source.query(sql, true, "sql");
+		
+		if (mapperRes.isLeft()) {
+			throw new Exception(mapperRes.left().get());
+		}
+		Either<Joiner4All,Mapper4All> goodResult = mapperRes
+				.right().get();
+		if (goodResult.isLeft()) {
+			PrettyPrint.print(goodResult.left().get());
+		} else {
+			PrettyPrint
+					.print(goodResult.right().get());
+		}
+		
+		
+		String queryResult = goodResult.right().get().toString();
 		assertEquals(queryResult, "test");
 	}
 
