@@ -52,9 +52,9 @@ public class DruidExecutionFactory extends ExecutionFactory<ConnectionFactory, D
     }
 
     @Override
-    public ResultSetExecution createResultSetExecution(QueryExpression command, ExecutionContext executionContext, RuntimeMetadata metadata, DruidConnection connectionFactory)
+    public ResultSetExecution createResultSetExecution(QueryExpression command, ExecutionContext executionContext, RuntimeMetadata metadata, DruidConnection connection)
     		throws TranslatorException {
-    	return new DruidExecution((Select)command);
+    	return new DruidExecution((Select)command, connection);
     }    
     
     public boolean supportsCompareCriteriaEquals() {

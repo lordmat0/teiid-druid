@@ -28,7 +28,7 @@ import org.teiid.core.BundleUtil;
 
 
 public class DruidPlugin { 
-    public static final String PLUGIN_ID = "translator_druid.translator_druid" ; //$NON-NLS-1$
+    public static final String PLUGIN_ID = "com.druid.translator_druid" ; //$NON-NLS-1$
 	public static final BundleUtil UTIL = new BundleUtil(PLUGIN_ID,PLUGIN_ID + ".i18n", ResourceBundle.getBundle(PLUGIN_ID + ".i18n")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	public static enum Event implements BundleUtil.Event{

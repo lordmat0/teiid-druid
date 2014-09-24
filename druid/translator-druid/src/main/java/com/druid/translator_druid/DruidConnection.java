@@ -30,5 +30,5 @@ import com.yahoo.sql4d.sql4ddriver.DDataSource;
 
 public interface DruidConnection extends Connection {
 	void close();
-	public DDataSource getConnection();
+    DDataSource getConnection();
 }

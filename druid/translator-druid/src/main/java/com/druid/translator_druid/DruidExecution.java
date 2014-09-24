@@ -44,12 +44,15 @@ public class DruidExecution implements ResultSetExecution {
 	Iterator<List<?>> results;
 	int[] neededColumns;
 	private Select query;
+	
+	private DruidConnection connection;
 
 	/**
      * 
      */
-	public DruidExecution(Select query) {
+	public DruidExecution(Select query, DruidConnection connection) {
 		this.query = query;
+		this.connection = connection;
 	}
 
 	public void execute() throws TranslatorException {
