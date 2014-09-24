@@ -49,7 +49,6 @@ public class DruidExecution implements ResultSetExecution {
 	private int index = 0;
 	private DruidConnection connection;
 	private DDataSource dDataSource;
-	
 
 	/**
      * 
@@ -66,7 +65,8 @@ public class DruidExecution implements ResultSetExecution {
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
 
 		try {
-			results = dDataSource.query(query.toString()).right().get().right().get().baseAllRows;
+			results = dDataSource.query(query.toString()).right().get().right()
+					.get().baseAllRows;
 		} catch (Exception ex) {
 			throw new TranslatorException(ex);
 		}
@@ -77,9 +77,15 @@ public class DruidExecution implements ResultSetExecution {
 	// the ResultSetExecution's `next` method. The `next` method should return
 	// null to indicate the end of results."
 	public List<?> next() throws TranslatorException, DataNotAvailableException {
-		if (results == null) throw new DataNotAvailableException();
-		else if (index < results.size()) return results.get(index++);
-		else return null;
+		if (results == null) {
+			throw new DataNotAvailableException();
+		} else if (index < results.size()) {
+			
+			return results.get(index++);
+		} else {
+			
+			return null;
+		}
 	}
 
 	/**
