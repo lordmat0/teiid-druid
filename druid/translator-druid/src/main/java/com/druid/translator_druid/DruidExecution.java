@@ -43,12 +43,14 @@ public class DruidExecution implements ResultSetExecution {
 	private Select command;
 
 	// Execution state
-	Iterator<List<?>> results;
+	private List<List<Object>> results;
 	int[] neededColumns;
 	private Select query;
-	
+	private int index = 0;
 	private DruidConnection connection;
 	private DDataSource dDataSource;
+	
+
 	/**
      * 
      */
@@ -62,29 +64,22 @@ public class DruidExecution implements ResultSetExecution {
 		// Log our command
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR, DruidPlugin.UTIL
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
-		
-		try{
-		// TODO find a way to get a string version of Select
-		dDataSource.query(query.toString());
-		}catch(Exception ex){
+
+		try {
+			results = dDataSource.query(query.toString()).right().get().right().get().baseAllRows;
+		} catch (Exception ex) {
 			throw new TranslatorException(ex);
 		}
-		
+
 	}
 
-	// "While the command is being executed, the translator provides results via the
-	// ResultSetExecution's `next` method. The `next` method should return null to
-	// indicate the end of results."
+	// "While the command is being executed, the translator provides results via
+	// the ResultSetExecution's `next` method. The `next` method should return
+	// null to indicate the end of results."
 	public List<?> next() throws TranslatorException, DataNotAvailableException {
-		throw new DataNotAvailableException(); // Assuming there is no pager in druid
-		
-		
-		/*
-		if (results.hasNext()) {
-			return projectRow(results.next(), neededColumns);
-		}
-		return null;
-		*/
+		if (results == null) throw new DataNotAvailableException();
+		else if (index < results.size()) return results.get(index++);
+		else return null;
 	}
 
 	/**
@@ -104,15 +99,13 @@ public class DruidExecution implements ResultSetExecution {
 	public void close() {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR,
 				DruidPlugin.UTIL.getString("close_query")); //$NON-NLS-1$
-		
-		
 
 	}
 
 	public void cancel() throws TranslatorException {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR,
 				DruidPlugin.UTIL.getString("cancel_query")); //$NON-NLS-1$
-		
+
 	}
 
 }
