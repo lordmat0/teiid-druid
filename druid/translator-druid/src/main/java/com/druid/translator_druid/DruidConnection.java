@@ -25,7 +25,10 @@ package com.druid.translator_druid;
 import javax.resource.ResourceException;
 import javax.resource.cci.Connection;
 
+import com.yahoo.sql4d.sql4ddriver.DDataSource;
+
 
 public interface DruidConnection extends Connection {
 	void close();
+	public DDataSource getConnection();
 }
