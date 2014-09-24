@@ -34,7 +34,7 @@ public class TestClassConnector {
 
 	@Test
 	public void testQuery() {
-		String sql = "SELECT * FROM wikipedia WHERE interval BETWEEN :startT AND :endT";
+		String sql = "SELECT * FROM wikipedia WHERE interval BETWEEN :startT AND :endT LIMIT 5;";
 		NamedParameters params = new NamedParameters();
 		params.add("startT", new DateTime(2014, 9, 1, 0, 0));
 		params.add("endT", new DateTime());

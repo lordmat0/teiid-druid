@@ -42,6 +42,7 @@ public class QueryMeta {
         this.filter = filter;
         this.intervals = intervals;
         this.microIntervals = microIntervals;
+        this.queryType = RequestType.UNKNOWN;
     }
 
     

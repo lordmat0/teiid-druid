@@ -23,7 +23,7 @@ public class DruidConnectionImpl extends BasicConnection implements DruidConnect
 
     public DruidConnectionImpl(DruidManagedConnectionFactory env) {
         this.config = env;
-        this.connection = new DDataSource("192.168.30.170", 8080);
+        this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
     }
     
     public DDataSource getConnection() {
