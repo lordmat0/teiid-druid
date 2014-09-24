@@ -23,9 +23,12 @@ translator-druid and connector-druid is licenced as Apache License, Version 2.0
 
 
 Sql4D is from which is also licenced as Apache License, Version 2.0
+
 https://github.com/srikalyc/Sql4D
 
+
 No significant changes have been made currently.
+
 
 
 
