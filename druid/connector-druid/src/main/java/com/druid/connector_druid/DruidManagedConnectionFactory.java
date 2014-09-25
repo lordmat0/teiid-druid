@@ -30,6 +30,11 @@ public class DruidManagedConnectionFactory extends
 	public BasicConnectionFactory<DruidConnectionImpl> createConnectionFactory()
 			throws ResourceException {
 		return new BasicConnectionFactory<DruidConnectionImpl>() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -9208138578461088218L;
+
 			@Override
 			public DruidConnectionImpl getConnection() throws ResourceException {
 				return new DruidConnectionImpl(
