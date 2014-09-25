@@ -64,6 +64,11 @@ public class DruidExecution implements ResultSetExecution {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR, DruidPlugin.UTIL
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
 
+		// Logic here to change
+		
+		
+		
+		
 		try {
 			results = dDataSource.query(query.toString()).right().get().right()
 					.get().baseAllRows;

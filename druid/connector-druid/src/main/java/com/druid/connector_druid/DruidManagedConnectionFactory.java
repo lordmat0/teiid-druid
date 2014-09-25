@@ -4,12 +4,25 @@
 package com.druid.connector_druid;
 
 import javax.resource.ResourceException;
-import javax.resource.spi.InvalidPropertyException;
 
+import org.teiid.core.BundleUtil;
 import org.teiid.resource.spi.BasicConnectionFactory;
 import org.teiid.resource.spi.BasicManagedConnectionFactory;
 
 public class DruidManagedConnectionFactory extends BasicManagedConnectionFactory {
+
+	private static final long serialVersionUID = -1437528038325708535L;
+	
+	public static final BundleUtil UTIL = BundleUtil.getBundleUtil(DruidManagedConnectionFactory.class);
+	
+	
+	private String brokerNodeIp;
+	private int brokerPort;
+	
+	private String coordinatorIp;
+	private int coordinatorPort;
+	
+	
 	
 	@Override
 	public BasicConnectionFactory<DruidConnectionImpl> createConnectionFactory() throws ResourceException {
@@ -19,8 +32,53 @@ public class DruidManagedConnectionFactory extends BasicManagedConnectionFactory
 				return new DruidConnectionImpl(DruidManagedConnectionFactory.this);
 			}
 		};
-	}	
-	
+	}
+
 	// ra.xml files getters and setters go here.
 
+	public String getBrokerNodeIp() {
+		return brokerNodeIp;
+	}
+
+
+
+	public void setBrokerNodeIp(String brokerNodeIp) {
+		this.brokerNodeIp = brokerNodeIp;
+	}
+
+
+
+	public int getBrokerPort() {
+		return brokerPort;
+	}
+
+
+
+	public void setBrokerPort(int brokerPort) {
+		this.brokerPort = brokerPort;
+	}
+
+
+
+	public String getCoordinatorIp() {
+		return coordinatorIp;
+	}
+
+
+
+	public void setCoordinatorIp(String coordinatorIp) {
+		this.coordinatorIp = coordinatorIp;
+	}
+
+
+
+	public int getCoordinatorPort() {
+		return coordinatorPort;
+	}
+
+
+
+	public void setCoordinatorPort(int coordinatorPort) {
+		this.coordinatorPort = coordinatorPort;
+	}	
 }
