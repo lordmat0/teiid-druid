@@ -38,12 +38,13 @@ public class DruidConnectionImpl extends BasicConnection implements
 			this.connection = new DDataSource(brokerIp, brokerPort,
 					coordinatorIp, coordinatorPort);
 		} else {
+			// Use the proxy
 			this.connection = new DDataSource(brokerIp, brokerPort,
 					coordinatorIp, coordinatorPort, proxyIp, proxyPort);
 		}
 
-		// this.connection = new DDataSource("192.168.30.170", 8080,
-		// "192.168.30.170", 8085);
+		// Example connection
+		// this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
 	}
 
 	public DDataSource getConnection() {

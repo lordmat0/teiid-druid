@@ -64,9 +64,14 @@ public class DruidExecution implements ResultSetExecution {
 		LogManager.logDetail(LogConstants.CTX_CONNECTOR, DruidPlugin.UTIL
 				.getString("execute_query", new Object[] { "druid", command })); //$NON-NLS-1$
 
-		// Logic here to change
+
+		// TODO: If query does not contain interval between x and y add it on 
+		// (assume it's trying to get ALL the data so first interval startOfTime-endOfTime
 		
 		
+		// TODO: If query contains count change the word to long_sum
+		
+		// TODO: if query contains sum change to double_sum
 		
 		
 		try {
