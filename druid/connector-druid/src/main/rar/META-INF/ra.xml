@@ -31,21 +31,21 @@
                   {$display:"BrokerPort",$description:"Broker Port",$required:"true"}
                </description>
                <config-property-name>BrokerPort</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
+               <config-property-type>java.lang.Integer</config-property-type>
             </config-property>
             <config-property>
                <description>
-				 {$display:"CoordinatorIp", $description:"Coordinator IP", $required:"false"}
+				 {$display:"CoordinatorIp", $description:"Coordinator IP", $required:"true"}
 			   </description>
                <config-property-name>CoordinatorIp</config-property-name>
                <config-property-type>java.lang.String</config-property-type>
             </config-property>
             <config-property>
                <description>
-				 {$display:"CoordinatorPort", $description:"Coordinator Port", $required:"false"}
+				 {$display:"CoordinatorPort", $description:"Coordinator Port", $required:"true"}
 			   </description>
                <config-property-name>CoordinatorPort</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
+               <config-property-type>java.lang.Integer</config-property-type>
             </config-property>
             <config-property>
                <description>
@@ -59,7 +59,7 @@
 				 {$display:"ProxyPort", $description:"Proxy Port", $required:"false"}
 			   </description>
                <config-property-name>ProxyPort</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
+               <config-property-type>java.lang.Integer</config-property-type>
             </config-property>
             
  
