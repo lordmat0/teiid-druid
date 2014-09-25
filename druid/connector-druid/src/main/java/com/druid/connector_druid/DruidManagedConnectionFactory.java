@@ -14,8 +14,6 @@ public class DruidManagedConnectionFactory extends
 
 	private static final long serialVersionUID = -1437528038325708535L;
 
-	public static final BundleUtil UTIL = BundleUtil
-			.getBundleUtil(DruidManagedConnectionFactory.class);
 
 	private String brokerNodeIp;
 	private int brokerPort;

@@ -109,7 +109,7 @@ public class TestClassConnector {
 			PrettyPrint.print(goodResult.left().get());
 		} else {
 			PrettyPrint
-					.print(new ArrayList<>(goodResult.right().get().values()));
+					.print(new ArrayList<TimeSeriesBean>(goodResult.right().get().values()));
 		}
 	}
 
