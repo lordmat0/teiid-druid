@@ -23,7 +23,16 @@ public class DruidConnectionImpl extends BasicConnection implements DruidConnect
 
     public DruidConnectionImpl(DruidManagedConnectionFactory env) {
         this.config = env;
-        this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
+        
+        String brokerIp = env.getBrokerNodeIp();
+        int brokerPort = env.getBrokerPort();
+        
+        String coordinatorIp = env.getCoordinatorIp();
+        int coordinatorPort = env.getCoordinatorPort();
+        
+        
+        this.connection = new DDataSource(brokerIp, brokerPort, coordinatorIp, coordinatorPort);
+        //this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
     }
     
     public DDataSource getConnection() {
