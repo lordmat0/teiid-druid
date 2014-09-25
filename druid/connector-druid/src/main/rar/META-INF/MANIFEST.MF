@@ -1,1 +1,1 @@
-Dependencies: org.jboss.teiid.common-core,org.jboss.teiid.api,javax.api,com.yahoo.sql4d.sql4ddriver,scala.Either,org.joda.time
+Dependencies: org.jboss.teiid.common-core,org.jboss.teiid.api,javax.api
