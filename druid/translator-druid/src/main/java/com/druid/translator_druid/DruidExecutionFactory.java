@@ -40,43 +40,65 @@ import org.teiid.translator.ResultSetExecution;
 import org.teiid.translator.Translator;
 import org.teiid.translator.TranslatorException;
 
-@Translator(name="druid", description="druid custom translator")
-public class DruidExecutionFactory extends ExecutionFactory<ConnectionFactory, DruidConnection> {
+@Translator(name = "druid", description = "druid custom translator")
+public class DruidExecutionFactory extends
+		ExecutionFactory<ConnectionFactory, DruidConnection> {
 
-	
 	public DruidExecutionFactory() {
 	}
-	
-    @Override
-    public void start() throws TranslatorException {
-    }
 
-    @Override
-    public ResultSetExecution createResultSetExecution(QueryExpression command, ExecutionContext executionContext, RuntimeMetadata metadata, DruidConnection connection)
-    		throws TranslatorException {
-    	return new DruidExecution((Select)command, connection);
-    }    
-    
-    public boolean supportsCompareCriteriaEquals() {
-        return true;
-    }
-
-    public boolean supportsInCriteria() {
-        return true;
-    }
-
-    @Override
-    public boolean isSourceRequired() {
-    	return false;
-    }
-    
 	@Override
-	public void getMetadata(MetadataFactory metadataFactory, DruidConnection connection) throws TranslatorException {
-	} 
-	
+	public void start() throws TranslatorException {
+	}
+
+	@Override
+	public ResultSetExecution createResultSetExecution(QueryExpression command,
+			ExecutionContext executionContext, RuntimeMetadata metadata,
+			DruidConnection connection) throws TranslatorException {
+		return new DruidExecution((Select) command, connection);
+	}
+
+	public boolean supportsCompareCriteriaEquals() {
+		return true;
+	}
+
+	public boolean supportsInCriteria() {
+		return true;
+	}
+
+	@Override
+	public boolean isSourceRequired() {
+		return false;
+	}
+
+	@Override
+	public void getMetadata(MetadataFactory metadataFactory,
+			DruidConnection connection) throws TranslatorException {
+	}
+
 	@Override
 	public boolean supportsOnlyLiteralComparison() {
 		return true;
 	}
-    
+
+	@Override
+	public boolean supportsAggregatesCount() {
+		return true;
+	}
+
+	@Override
+	public boolean supportsAggregatesCountStar() {
+		return true;
+	}
+
+	@Override
+	public boolean supportsAggregatesDistinct() {
+		return true;
+	}
+
+	@Override
+	public boolean supportsGroupBy() {
+		return true;
+	}
+
 }
