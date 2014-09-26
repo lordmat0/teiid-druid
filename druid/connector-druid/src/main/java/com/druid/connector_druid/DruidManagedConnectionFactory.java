@@ -14,7 +14,6 @@ public class DruidManagedConnectionFactory extends
 
 	private static final long serialVersionUID = -1437528038325708535L;
 
-
 	private String brokerNodeIp;
 	private int brokerPort;
 
@@ -89,6 +88,58 @@ public class DruidManagedConnectionFactory extends
 
 	public void setProxyPort(String proxyPort) {
 		this.proxyPort = proxyPort;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((brokerNodeIp == null) ? 0 : brokerNodeIp.hashCode());
+		result = prime * result + brokerPort;
+		result = prime * result
+				+ ((coordinatorIp == null) ? 0 : coordinatorIp.hashCode());
+		result = prime * result + coordinatorPort;
+		result = prime * result + ((proxyIp == null) ? 0 : proxyIp.hashCode());
+		result = prime * result
+				+ ((proxyPort == null) ? 0 : proxyPort.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DruidManagedConnectionFactory other = (DruidManagedConnectionFactory) obj;
+		if (brokerNodeIp == null) {
+			if (other.brokerNodeIp != null)
+				return false;
+		} else if (!brokerNodeIp.equals(other.brokerNodeIp))
+			return false;
+		if (brokerPort != other.brokerPort)
+			return false;
+		if (coordinatorIp == null) {
+			if (other.coordinatorIp != null)
+				return false;
+		} else if (!coordinatorIp.equals(other.coordinatorIp))
+			return false;
+		if (coordinatorPort != other.coordinatorPort)
+			return false;
+		if (proxyIp == null) {
+			if (other.proxyIp != null)
+				return false;
+		} else if (!proxyIp.equals(other.proxyIp))
+			return false;
+		if (proxyPort == null) {
+			if (other.proxyPort != null)
+				return false;
+		} else if (!proxyPort.equals(other.proxyPort))
+			return false;
+		return true;
 	}
 
 }
