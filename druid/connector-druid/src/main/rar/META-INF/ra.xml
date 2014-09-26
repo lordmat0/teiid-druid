@@ -13,10 +13,10 @@
    </license>
  
    <resourceadapter>
-      <resourceadapter-class>org.teiid.resource.adapter.druid.DruidResourceAdapter</resourceadapter-class>
+      <resourceadapter-class>com.druid.connector_druid.DruidResourceAdapter</resourceadapter-class>
       <outbound-resourceadapter>
          <connection-definition>
-            <managedconnectionfactory-class>org.teiid.resource.adapter.druid.DruidManagedConnectionFactory</managedconnectionfactory-class>
+            <managedconnectionfactory-class>com.druid.connector_druid.DruidManagedConnectionFactory</managedconnectionfactory-class>
  
             <!-- repeat for every configuration property -->
             <config-property>
