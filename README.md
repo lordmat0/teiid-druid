@@ -1,7 +1,7 @@
 teiid-druid
 ===========
 
-A project containing a druid connection and translator
+A project that contains a druid connection and a druid translator for JBoss Teiid. It provides a wrapper around Sql4Ddriver and Sql4DCompiler.
 
 
 To Run
