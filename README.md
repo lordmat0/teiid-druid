@@ -15,6 +15,11 @@ to
 users\username\.m2\
 
 
+If you're using eclipse you also need to follow the instructions found here:
+
+http://teiiddesigner.jboss.org/downloads.html
+
+
 
 Licence
 =========
