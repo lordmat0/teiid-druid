@@ -21,28 +21,28 @@
             <!-- repeat for every configuration property -->
             <config-property>
                <description>
-                  {$display:"BrokerNodeIp",$description:"Broker IP Address",$required:"true"}
+                  {$display:"BrokerNodeIp",$description:"Broker IP Address",$required:"false"}
                </description>
                <config-property-name>BrokerNodeIp</config-property-name>
                <config-property-type>java.lang.String</config-property-type>
             </config-property>
             <config-property>
                <description>
-                  {$display:"BrokerPort",$description:"Broker Port",$required:"true"}
+                  {$display:"BrokerPort",$description:"Broker Port",$required:"false"}
                </description>
                <config-property-name>BrokerPort</config-property-name>
                <config-property-type>java.lang.Integer</config-property-type>
             </config-property>
             <config-property>
                <description>
-				 {$display:"CoordinatorIp", $description:"Coordinator IP", $required:"true"}
+				 {$display:"CoordinatorIp", $description:"Coordinator IP", $required:"false"}
 			   </description>
                <config-property-name>CoordinatorIp</config-property-name>
                <config-property-type>java.lang.String</config-property-type>
             </config-property>
             <config-property>
                <description>
-				 {$display:"CoordinatorPort", $description:"Coordinator Port", $required:"true"}
+				 {$display:"CoordinatorPort", $description:"Coordinator Port", $required:"false"}
 			   </description>
                <config-property-name>CoordinatorPort</config-property-name>
                <config-property-type>java.lang.Integer</config-property-type>
