@@ -38,8 +38,8 @@ public class TestClassConnector {
 	@Before
 	public void setUp() throws Exception {
 		DruidManagedConnectionFactory env = new DruidManagedConnectionFactory();
-		env.setBrokerNodeIp("192.168.30.170");
-		env.setBrokerPort(8080);
+		//env.setBrokerNodeIp("192.168.30.170");
+		//env.setBrokerPort(8080);
 		druidConnection = new DruidConnectionImpl(env);
 	}
 

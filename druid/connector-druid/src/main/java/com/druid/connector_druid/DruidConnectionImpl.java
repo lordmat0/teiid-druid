@@ -23,7 +23,7 @@ public class DruidConnectionImpl extends BasicConnection implements
 
 	public DruidConnectionImpl(DruidManagedConnectionFactory env) {
 		this.config = env;
-
+		/*
 		String brokerIp = env.getBrokerNodeIp();
 		int brokerPort = env.getBrokerPort();
 
@@ -42,9 +42,10 @@ public class DruidConnectionImpl extends BasicConnection implements
 			this.connection = new DDataSource(brokerIp, brokerPort,
 					coordinatorIp, coordinatorPort, proxyIp, proxyPort);
 		}
+		*/
 
 		// Example connection
-		// this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
+		this.connection = new DDataSource("192.168.30.170", 8080, "192.168.30.170", 8085);
 	}
 
 	public DDataSource getConnection() {

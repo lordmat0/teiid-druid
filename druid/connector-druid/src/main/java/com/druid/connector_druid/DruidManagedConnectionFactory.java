@@ -14,6 +14,7 @@ public class DruidManagedConnectionFactory extends
 
 	private static final long serialVersionUID = -1437528038325708535L;
 
+	/*
 	private String brokerNodeIp;
 	private int brokerPort;
 
@@ -22,6 +23,7 @@ public class DruidManagedConnectionFactory extends
 
 	private String proxyIp;
 	private String proxyPort;
+	*/
 
 	@Override
 	public BasicConnectionFactory<DruidConnectionImpl> createConnectionFactory()
@@ -41,7 +43,7 @@ public class DruidManagedConnectionFactory extends
 	}
 
 	// ra.xml files getters and setters go here.
-
+/*
 	public String getBrokerNodeIp() {
 		return brokerNodeIp;
 	}
@@ -89,7 +91,10 @@ public class DruidManagedConnectionFactory extends
 	public void setProxyPort(String proxyPort) {
 		this.proxyPort = proxyPort;
 	}
+	*/
 
+	
+	/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -142,4 +147,19 @@ public class DruidManagedConnectionFactory extends
 		return true;
 	}
 
+*/
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	
+	}
+	
+	
+	@Override
+	public int hashCode(){
+		return super.hashCode();
+	}
+	
+	
+	
 }

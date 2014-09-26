@@ -18,50 +18,7 @@
          <connection-definition>
             <managedconnectionfactory-class>com.druid.connector_druid.DruidManagedConnectionFactory</managedconnectionfactory-class>
  
-            <!-- repeat for every configuration property -->
-            <config-property>
-               <description>
-                  {$display:"BrokerNodeIp",$description:"Broker IP Address",$required:"false"}
-               </description>
-               <config-property-name>BrokerNodeIp</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
-            </config-property>
-            <config-property>
-               <description>
-                  {$display:"BrokerPort",$description:"Broker Port",$required:"false"}
-               </description>
-               <config-property-name>BrokerPort</config-property-name>
-               <config-property-type>java.lang.Integer</config-property-type>
-            </config-property>
-            <config-property>
-               <description>
-				 {$display:"CoordinatorIp", $description:"Coordinator IP", $required:"false"}
-			   </description>
-               <config-property-name>CoordinatorIp</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
-            </config-property>
-            <config-property>
-               <description>
-				 {$display:"CoordinatorPort", $description:"Coordinator Port", $required:"false"}
-			   </description>
-               <config-property-name>CoordinatorPort</config-property-name>
-               <config-property-type>java.lang.Integer</config-property-type>
-            </config-property>
-            <config-property>
-               <description>
-				 {$display:"ProxyIp", $description:"Proxy IP", $required:"false"}
-			   </description>
-               <config-property-name>ProxyIp</config-property-name>
-               <config-property-type>java.lang.String</config-property-type>
-            </config-property>
-            <config-property>
-               <description>
-				 {$display:"ProxyPort", $description:"Proxy Port", $required:"false"}
-			   </description>
-               <config-property-name>ProxyPort</config-property-name>
-               <config-property-type>java.lang.Integer</config-property-type>
-            </config-property>
-            
+        
  
             <!-- use the below as is if you used the Connection Factory interface -->
             <connectionfactory-interface>
