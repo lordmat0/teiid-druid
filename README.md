@@ -3,6 +3,8 @@ teiid-druid
 
 A project that contains a druid connection and a druid translator for JBoss Teiid. It provides a wrapper around Sql4Ddriver and Sql4DCompiler.
 
+**NOTE: This is still a work in progress and does not function correctly yet (contributions welcome :smile:).**
+
 
 To Run
 ========
